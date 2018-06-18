@@ -1,19 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Router, Route, Indexroute, hashHistory} from "react-router";
+import {Router, Route, IndexRoute, hashHistory} from "react-router";
 
-import Layout from "./pages/Layout";
-import Archived from "./pages/Archived";
+import Archives from "./pages/Archives";
 import Featured from "./pages/Featured";
+import Layout from "./pages/Layout";
 import Settings from "./pages/Settings";
 
 const app = document.getElementById('app');
+
 ReactDOM.render(
 	<Router history={hashHistory}>
 		<Route path="/" component={Layout}>
-			<Indexroute component={Featured}></Indexroute>
-			<Route path="Archived" component={Archived}></Route>
+			<IndexRoute component={Featured}></IndexRoute>
+			<Route path="Archives(/:articles)" component={Archives}></Route>
 			<Route path="Settings" component={Settings}></Route>
 		</Route>
-	</Router>
-, app);
+	</Router>, 
+app);
