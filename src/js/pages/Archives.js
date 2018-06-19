@@ -2,10 +2,12 @@ import React from "react";
 
 export default class Archives extends React.Component {
   render() {
-  	console.log(this.props);
+  	const { params } = this.props;
+  	const { article } = params;
     return (
       <div>
-        <h1> Rent a Bike Archives!! ({this.props.params.articles}) </h1>
+        <h1> Rent a Bike Archives!! ({article}) </h1>
+        <h2> Date : {this.props.location.query.date} , Filter : {this.props.location.query.filter}</h2>
       </div>
     );
   }
